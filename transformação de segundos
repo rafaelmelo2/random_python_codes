@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+def transforma(segundos):
+  h = int(segundos/3600)
+  r = int(segundos % 3600)
+  m = int(r / 60) 
+  s = int(r % m)              #(r % 60))
+ 
+  segundos_dois = int(segundos*2)
+  h_dois = int(segundos_dois/3600)
+  r_dois = int(segundos_dois % 3600)
+  m_dois = int(r_dois / 60) 
+  s_dois = int(r_dois % m_dois)
+
+  segundos_p = segundos*segundos
+  h_p = int(segundos_p/3600)
+  r_p = int(segundos_p % 3600)
+  m_p = int(r_p / 60) 
+  s_p = int(r_p % m_p)
+  
+
+  print ("""== Resultado da conversao:
+        {} segundos corresponde a {}h {}m {}s
+        {} segundos corresponde a {}h {}m {}s
+        {} segundos corresponde a {}h {}m {}s""".format(segundos,h,m,s,segundos_dois,h_dois,m_dois,s_dois, segundos_p,h_p,m_p,s_p))
+
+
+seg = int(input("Informe a quantidade de segundos: ")) #INICIO
+if seg > 100000 or seg <0:
+  print("Valor informado não compatível!")
+else:
+  transforma(seg)
